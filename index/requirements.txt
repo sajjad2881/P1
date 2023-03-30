@@ -1,0 +1,2 @@
+opensearchpy==1.2.0
+requests_aws4auth==1.1.1
