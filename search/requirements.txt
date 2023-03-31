@@ -1,4 +1,4 @@
 boto3==1.20.9
-opensearchpy==1.2.0
+elasticsearch==7.15.0
 requests_aws4auth==1.1.1
 inflection==0.5.1
