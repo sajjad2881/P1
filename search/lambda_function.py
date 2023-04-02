@@ -3,7 +3,7 @@ import json
 import logging
 import boto3
 #from opensearchpy import OpenSearch, RequestsHttpConnection
-#Test comment
+#Test comment 2
 from elasticsearch import Elasticsearch, RequestsHttpConnection
 from requests_aws4auth import AWS4Auth
 import inflection
