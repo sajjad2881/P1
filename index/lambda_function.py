@@ -1,7 +1,7 @@
 import json
 import boto3
 import os
-from opensearchpy import OpenSearch, RequestsHttpConnection
+#from opensearchpy import OpenSearch, RequestsHttpConnection
 from elasticsearch import Elasticsearch, RequestsHttpConnection
 from requests_aws4auth import AWS4Auth
 
