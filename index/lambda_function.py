@@ -2,6 +2,7 @@ import json
 import boto3
 import os
 from opensearchpy import OpenSearch, RequestsHttpConnection
+from elasticsearch import Elasticsearch, RequestsHttpConnection
 from requests_aws4auth import AWS4Auth
 
 s3 = boto3.client('s3')
@@ -80,7 +81,7 @@ def get_opensearch_client():
     credentials = boto3.Session().get_credentials()
     awsauth = AWS4Auth(credentials.access_key, credentials.secret_key, region, service, session_token=credentials.token)
 
-    return OpenSearch(
+    return Elasticsearch(
     hosts=[host],
     port=443,
     http_auth=awsauth,
