@@ -2,7 +2,8 @@
 import json
 import logging
 import boto3
-from opensearchpy import OpenSearch, RequestsHttpConnection
+#from opensearchpy import OpenSearch, RequestsHttpConnection
+from elasticsearch import Elasticsearch, RequestsHttpConnection
 from requests_aws4auth import AWS4Auth
 import inflection
 
@@ -10,13 +11,13 @@ import inflection
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 client = boto3.client('lexv2-runtime')
-# Configure OpenSearch connection
+# Configure Elasticsearch connection
 region = 'us-east-1' # Replace with your OpenSearch region
 service = 'es'
 credentials = boto3.Session().get_credentials()
 aws_auth = AWS4Auth(credentials.access_key, credentials.secret_key, region, service, session_token=credentials.token)
 
-opensearch = OpenSearch(
+opensearch = Elasticsearch(
     hosts=[{'host': 'search-photos-bpp72xnr3jxv4jyyvb753ahzty.us-east-1.es.amazonaws.com', 'port': 443}],
     http_auth=aws_auth,
     use_ssl=True,
